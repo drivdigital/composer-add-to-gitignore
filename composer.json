@@ -1,5 +1,5 @@
 {
-  "name": "drivdigital/plugin",
+  "name": "drivdigital/composer-add-to-gitignore",
   "type": "composer-plugin",
   "require": {
     "composer-plugin-api": "^1.0"
@@ -10,6 +10,6 @@
     }
   },
   "extra": {
-    "class": "drivdigital\\plugin"
+    "class": "drivdigital\\composer_add_to_gitignore"
   }
 }

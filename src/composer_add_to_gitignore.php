@@ -9,7 +9,7 @@ use Composer\IO\IOInterface;
 use Composer\Plugin\PluginEvents;
 use Composer\Plugin\PluginInterface;
 
-class plugin implements PluginInterface, EventSubscriberInterface {
+class composer_add_to_gitignore implements PluginInterface, EventSubscriberInterface {
   /** @type Composer */
   protected $composer;
 
