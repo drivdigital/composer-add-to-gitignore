@@ -1,5 +1,5 @@
 {
-  "name": "composer/installers",
+  "name": "drivdigital/plugin",
   "type": "composer-plugin",
   "require": {
     "composer-plugin-api": "^1.0"
@@ -9,7 +9,7 @@
       "drivdigital\\": "src"
     }
   },
-    "extra": {
-        "class": "drivdigital\\plugin"
-    }
+  "extra": {
+    "class": "drivdigital\\plugin"
+  }
 }
