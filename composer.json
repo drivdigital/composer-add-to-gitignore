@@ -5,8 +5,11 @@
     "composer-plugin-api": "^1.0"
   },
   "autoload": {
-    "psr-4": {
-      "drivdigital\\": "drivdigital"
+    "psr-0": {
+      "drivdigital\\": "src"
     }
-  }
+  },
+    "extra": {
+        "class": "drivdigital\\plugin"
+    }
 }
