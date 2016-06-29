@@ -35,7 +35,7 @@ class composer_add_to_gitignore implements PluginInterface, EventSubscriberInter
     $operation = $event->getOperation();
     if ( ! method_exists( $operation, 'getPackage' ) )
       return;
-    $package->getPackage();
+    $package = $operation->getPackage();
     $installationManager = $event->getComposer()->getInstallationManager();
     $dir = $installationManager->getInstallPath($package);
     // Avoid packages installed to vendor
