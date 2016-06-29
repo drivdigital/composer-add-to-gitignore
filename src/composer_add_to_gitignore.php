@@ -28,7 +28,7 @@ class composer_add_to_gitignore implements PluginInterface, EventSubscriberInter
   public static function getSubscribedEvents() {
     return [
       PackageEvents::POST_PACKAGE_UPDATE => 'add_package_to_gitignore',
-      // PackageEvents::POST_PACKAGE_INSTALL => 'add_package_to_gitignore',
+      PackageEvents::POST_PACKAGE_INSTALL => 'add_package_to_gitignore',
     ];
   }
   public function add_package_to_gitignore( $event ) {
