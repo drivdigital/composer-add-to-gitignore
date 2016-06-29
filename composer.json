@@ -1,0 +1,12 @@
+{
+  "name": "composer/installers",
+  "type": "composer-plugin",
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "drivdigital\\": "drivdigital"
+    }
+  }
+}
