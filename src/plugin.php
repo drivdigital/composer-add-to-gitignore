@@ -19,7 +19,6 @@ class plugin implements PluginInterface, EventSubscriberInterface {
   public function activate( Composer $composer, IOInterface $io ) {
     $this->composer = $composer;
     $this->io = $io;
-    $this->io->write( __CLASS__ . '::' . __METHOD__ . "()" );
   }
 
   /**
@@ -28,17 +27,9 @@ class plugin implements PluginInterface, EventSubscriberInterface {
   */
   public static function getSubscribedEvents() {
     return [
-      PackageEvents::POST_PACKAGE_UPDATE => 'onPostPackageUpdate',
-      PackageEvents::POST_PACKAGE_INSTALL => 'onPostPackageInstall',
+      PackageEvents::POST_PACKAGE_UPDATE => 'add_package_to_gitignore',
+      PackageEvents::POST_PACKAGE_INSTALL => 'add_package_to_gitignore',
     ];
-  }
-  public function onPostPackageUpdate( PackageEvent $event ) {
-    $this->io->write( __CLASS__ . '::' . __METHOD__ . "()" );
-    $this->add_package_to_gitignore( $event );
-  }
-  public function onPostPackageInstall( PackageEvent $event ) {
-    $this->io->write( __CLASS__ . '::' . __METHOD__ . "()" );
-    $this->add_package_to_gitignore( $event );
   }
   public function add_package_to_gitignore( $event ) {
     $package = $event->getOperation()->getPackage();
