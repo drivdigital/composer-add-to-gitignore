@@ -28,11 +28,14 @@ class composer_add_to_gitignore implements PluginInterface, EventSubscriberInter
   public static function getSubscribedEvents() {
     return [
       PackageEvents::POST_PACKAGE_UPDATE => 'add_package_to_gitignore',
-      PackageEvents::POST_PACKAGE_INSTALL => 'add_package_to_gitignore',
+      // PackageEvents::POST_PACKAGE_INSTALL => 'add_package_to_gitignore',
     ];
   }
   public function add_package_to_gitignore( $event ) {
-    $package = $event->getOperation()->getPackage();
+    $operation = $event->getOperation();
+    if ( ! method_exists( $operation, 'getPackage' ) )
+      return;
+    $package->getPackage();
     $installationManager = $event->getComposer()->getInstallationManager();
     $dir = $installationManager->getInstallPath($package);
     // Avoid packages installed to vendor
