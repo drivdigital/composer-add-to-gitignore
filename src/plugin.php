@@ -1,5 +1,5 @@
 <?php
-namespace drivdigital\plugin;
+namespace drivdigital;
 
 use Composer\Composer;
 use Composer\EventDispatcher\EventSubscriberInterface;
